@@ -83,7 +83,7 @@ cd spark-comercio360
 Por seguridad, **no** incluimos credenciales en el código. Define la contraseña de la base de datos como variable de entorno antes de ejecutar:
 
 ```bash
-export DB_PASSWORD='TuContraseñaRealDeRDS'
+export DB_PASSWORD='[PASSWORD]'
 
 ```
 
