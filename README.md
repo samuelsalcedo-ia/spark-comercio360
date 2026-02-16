@@ -26,8 +26,10 @@ El despliegue se ha realizado en AWS siguiendo las mejores prácticas de separac
 ## 📂 Estructura del Proyecto
 
 * `setup_ec2.sh`: **Script de Aprovisionamiento (IaC)**. Instala Java, Spark, Python, Git y descarga automáticamente los drivers necesarios (MySQL/AWS).
+* `generar_y_subir_s3_comercio360.py`: **Generador de Datos**. Script auxiliar que crea los datasets sintéticos (CSV) y los carga en el Data Lake (S3).
 * `job_analytics_completo.py`: **Script Principal ETL**. Realiza la ingesta desde S3, transformaciones (Joins, Window Functions) y carga en RDS.
 * `consultar_resultados_sql.py`: Script de auditoría que conecta a RDS y muestra las tablas resultantes por consola para verificar la persistencia.
+* `db_schema.sql`: **Esquema de Base de Datos**. Definición SQL (DDL) para crear la estructura de tablas en MySQL.
 * `requirements.txt`: Lista de dependencias de Python.
 * `README.md`: Documentación oficial del proyecto.
 
@@ -83,7 +85,7 @@ cd spark-comercio360
 Por seguridad, **no** incluimos credenciales en el código. Define la contraseña de la base de datos como variable de entorno antes de ejecutar:
 
 ```bash
-export DB_PASSWORD='[PASSWORD]'
+export DB_PASSWORD='TuContraseñaRealDeRDS'
 
 ```
 
@@ -116,3 +118,4 @@ Para confirmar que los datos se han guardado correctamente en MySQL, ejecutamos 
   consultar_resultados_sql.py
 
 ```
+
