@@ -52,7 +52,7 @@ print("--- Procesando Consulta B: KPIs Mensuales... ---")
 df_final_b = df_ventas.withColumn("mes", F.date_format("order_date", "yyyy-MM")) \
     .groupBy("mes", "product_id") \
     .agg(
-        F.countDistinct("user_id").alias("clientes_unicos"),
+        F.countDistinct("customer_id").alias("clientes_unicos"),,
         F.count("order_id").alias("num_pedidos"),
         F.avg("importe_total").alias("ticket_medio"),
         F.sum("importe_total").alias("total_mensual")
