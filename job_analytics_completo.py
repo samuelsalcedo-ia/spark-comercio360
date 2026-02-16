@@ -85,7 +85,7 @@ df_final_c = df_c_daily \
 # ESCRITURA EN RDS (MYSQL)
 # ==========================================
 print(f"--- Conectando a MySQL: {rds_endpoint} ---")
-jdbc_url = f"jdbc:mysql://{rds_endpoint}:3306/comercio360?useSSL=false"
+jdbc_url = f"jdbc:mysql://{rds_endpoint}:3306/comercio360?useSSL=false&allowPublicKeyRetrieval=true"
 props = {"user": "admin", "password": db_password, "driver": "com.mysql.cj.jdbc.Driver"}
 
 tablas = [
